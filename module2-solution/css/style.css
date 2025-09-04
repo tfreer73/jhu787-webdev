@@ -1,0 +1,140 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Titles */
+.menu-title {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Courier New", Courier, monospace;
+
+}
+
+.categories-title {
+  display: none; 
+  font-size: 1.2rem;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* Container Layout */
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Section Styles */
+.section {
+  position: relative;
+  background-color: #d3d3d3;
+  border: 1px solid #000;
+  padding: 40px 15px 15px 15px; 
+  margin: 10px;
+  height: 200px; 
+  overflow: hidden;
+  cursor: default;
+}
+
+.section:hover {
+  overflow-y: auto;
+  cursor: ns-resize; 
+}
+
+/* Section Titles */
+.section-title {
+  border: 1px solid #000;
+  padding: 5px 10px;
+  font-size: 1.25rem; 
+}
+
+.section-title.short {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.section-title.long {
+  display: none; 
+}
+
+/* Colors for titles */
+.chicken .section-title {
+  background-color: lightgreen;
+}
+
+.beef .section-title {
+  background-color: coral;
+}
+
+.sushi .section-title {
+  background-color: lightblue;
+}
+
+/* Desktop view (≥992px) */
+@media (min-width: 992px) {
+  .section {
+    float: left;
+    width: 31%; 
+  }
+}
+
+/* Tablet view (768px–991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .section {
+    float: left;
+    width: 47%; 
+  }
+
+  .sushi {
+    width: 96%; 
+  }
+}
+
+/* Mobile view (≤767px) */
+@media (max-width: 767px) {
+  .menu-title {
+    display: none;
+  }
+
+  .categories-title {
+    display: block;
+  }
+
+  .section {
+    width: 96%;
+    float: none;
+    padding-top: 70px;
+  }
+
+  /* Hide short version */
+  .section-title.short {
+    display: none; 
+  }
+
+  /* Show long version */
+  .section-title.long {
+    display: block; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word;
+    border: 1px solid #000;
+    padding: 10px;
+  }
+}
+
