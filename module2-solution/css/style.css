@@ -39,8 +39,8 @@ h1 {
 /* Section Styles */
 .section {
   position: relative;
-  background-color: #d3d3d3;
-  border: 1px solid #000;
+  background-color: grey;
+  border: 1px solid black;
   padding: 40px 15px 15px 15px; 
   margin: 10px;
   height: 200px; 
@@ -55,7 +55,7 @@ h1 {
 
 /* Section Titles */
 .section-title {
-  border: 1px solid #000;
+  border: 1px solid black;
   padding: 5px 10px;
   font-size: 1.25rem; 
 }
