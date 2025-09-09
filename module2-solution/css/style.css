@@ -116,25 +116,24 @@ h1 {
   .section {
     width: 96%;
     float: none;
-    padding-top: 70px;
+    padding-top: 15px;
   }
 
   /* Hide short version */
   .section-title.short {
     display: none; 
   }
-
-  /* Show long version */
+  
   .section-title.long {
-    display: block; 
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: block;
+    position: static;
     width: 100%;
     text-align: center;
     word-wrap: break-word;
     border: 1px solid #000;
     padding: 10px;
+    margin-bottom: 10px;
   }
 }
+
 
