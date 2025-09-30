@@ -384,7 +384,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
     }
 
     // Bonus: textual rating 
-    finalHtml = insertProperty(finalHtml, "ratingText", `${rating} star rating`);
+    finalHtml = insertProperty(finalHtml, "ratingText", `${rating}-star rating`);
     insertHtml("#main-content", finalHtml);
   }
   
