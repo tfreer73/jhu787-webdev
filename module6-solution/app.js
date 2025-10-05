@@ -5,20 +5,19 @@
     LunchCheckController.$inject = ['$scope'];
 
     function LunchCheckController($scope) {
-        var vm = this;
 
-        vm.items = "";
-        vm.message = "";
-        vm.messageColor = "";
-        vm.borderColor = "";
+        $scope.items = "";
+        $scope.message = "";
+        $scope.messageColor = "";
+        $scope.borderColor = "";
 
-        vm.checkItems = function () {
-            if (!vm.items || vm.items.trim() === "") {
+        $scope.checkItems = function () {
+            if (!$scope.items || $scope.items.trim() === "") {
                 displayMessage("Please enter data first", "red");
                 return;
             }
 
-            var itemsArray = vm.items.split(',').map(
+            var itemsArray = $scope.items.split(',').map(
                 function (item) { 
                     return item.trim()
                 }).filter(function (item) {
@@ -40,9 +39,9 @@
         }
 
         function displayMessage(msg, color) {
-            vm.message = msg;
-            vm.messageColor = color;
-            vm.borderColor = color;
+            $scope.message = msg;
+            $scope.messageColor = color;
+            $scope.borderColor = color;
         }
 
     }

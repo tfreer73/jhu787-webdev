@@ -10,7 +10,7 @@
     <script src="angular.min.js"></script>
     <script src="app.js"></script>"
   </head>
-<body ng-controller="LunchCheckController as lunch">
+<body ng-controller="LunchCheckController">
    <div class="container">
      <h1>Lunch Checker</h1>
         <p>NOTE: Empty items (i.e. ", ," or ",,") are NOT counted towards the item count.</p>
@@ -18,15 +18,15 @@
             <input id="lunch-menu" type="text"
             placeholder="Enter dishes you have for lunch separated by commas"
             class="form-control"
-            ng-model="lunch.items"
-            ng-style="{'border-color': lunch.borderColor}"
+            ng-model="items"
+            ng-style="{'border-color': borderColor}"
             >
         </div>
         <div class="form-group">
-            <button class="btn btn-default" ng-click="lunch.checkItems()">Check If Too Much</button>
+            <button class="btn btn-default" ng-click="checkItems()">Check If Too Much</button>
         </div>
-        <div class="form-group message" ng-style="{'color': lunch.messageColor}">
-          {{lunch.message}}
+        <div class="form-group message" ng-style="{'color': messageColor}">
+          {{message}}
         </div>
    </div>
 
