@@ -13,7 +13,7 @@
 <body ng-controller="LunchCheckController as lunch">
    <div class="container">
      <h1>Lunch Checker</h1>
-
+        <p>NOTE: Empty items (i.e. ", ,,") are NOT counted towards the item count.</p>
         <div class="form-group">
             <input id="lunch-menu" type="text"
             placeholder="list comma separated dishes you usually have for lunch"
@@ -21,7 +21,6 @@
             ng-model="lunch.items"
             ng-style="{'border-color': lunch.borderColor}"
             >
-          <!-- Note: empty items (e.g., ,,) are NOT counted. -->
         </div>
         <div class="form-group">
             <button class="btn btn-default" ng-click="lunch.checkItems()">Check If Too Much</button>
