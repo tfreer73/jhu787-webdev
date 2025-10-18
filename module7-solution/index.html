@@ -41,7 +41,7 @@
         <ul>
           <li ng-repeat="item in toBuyCtrl.items">
             Buy 
-            <in put type="number" ng-model="item.quantity" min="1"> 
+            <input type="number" ng-model="item.quantity" min="1"> 
             {{ item.name }} @ {{ item.pricePerItem }} each
             <button class="btn btn-default" ng-click="toBuyCtrl.buyItem($index)">
               <span class="glyphicon glyphicon-ok"></span>
