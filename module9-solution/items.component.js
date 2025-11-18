@@ -10,7 +10,7 @@
             {{ item.name }} — {{ item.description }}
           </li>
         </ul>
-        <a ui-sref="categories">← Back to Categories</a>
+        <a ui-sref="categories">Back to Categories</a>
       `,
       bindings: {
         items: '<',
