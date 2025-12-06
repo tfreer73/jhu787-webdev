@@ -1,0 +1,73 @@
+<div class="container">
+  <h2>Sign Up</h2>
+
+  <form name="signupForm" novalidate ng-submit="signupCtrl.submit(signupForm)">
+
+    <div class="form-group" ng-class="{ 'has-error': signupForm.firstName.$touched && signupForm.firstName.$invalid }">
+      <label for="firstName">First Name *</label>
+      <input id="firstName" name="firstName" type="text" class="form-control"
+             ng-model="signupCtrl.user.firstName" required />
+      <div class="help-block" ng-if="signupForm.firstName.$touched && signupForm.firstName.$error.required">
+        First name is required.
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': signupForm.lastName.$touched && signupForm.lastName.$invalid }">
+      <label for="lastName">Last Name *</label>
+      <input id="lastName" name="lastName" type="text" class="form-control"
+             ng-model="signupCtrl.user.lastName" required />
+      <div class="help-block" ng-if="signupForm.lastName.$touched && signupForm.lastName.$error.required">
+        Last name is required.
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': signupForm.email.$touched && signupForm.email.$invalid }">
+      <label for="email">Email *</label>
+      <input id="email" name="email" type="email" class="form-control"
+             ng-model="signupCtrl.user.email" required />
+      <div class="help-block" ng-if="signupForm.email.$touched && signupForm.email.$error.required">
+        Email is required.
+      </div>
+      <div class="help-block" ng-if="signupForm.email.$touched && signupForm.email.$error.email">
+        Please enter a valid email.
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': signupForm.phone.$touched && signupForm.phone.$invalid }">
+      <label for="phone">Phone *</label>
+      <input id="phone" name="phone" type="tel" class="form-control"
+             ng-model="signupCtrl.user.phone" required ng-pattern="/^\+?\d{7,15}$/" />
+      <div class="help-block" ng-if="signupForm.phone.$touched && signupForm.phone.$error.required">
+        Phone is required.
+      </div>
+      <div class="help-block" ng-if="signupForm.phone.$touched && signupForm.phone.$error.pattern">
+        Enter a valid phone number (digits only, optional leading +).
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': (signupForm.favorite.$touched || signupForm.$submitted) && signupForm.favorite.$invalid }">
+      <label for="favorite">Favorite Menu Number *</label>
+      <input id="favorite" name="favorite" type="text" class="form-control"
+             ng-model="signupCtrl.user.favoriteShortName"
+             required
+             fav-item-exists
+             ng-model-options="{ updateOn: 'blur' }"
+             placeholder="e.g. L1, A10" />
+      <div class="help-block" ng-if="(signupForm.favorite.$touched || signupForm.$submitted) && signupForm.favorite.$error.required">
+        Favorite menu number is required.
+      </div>
+      <div class="help-block" ng-if="signupForm.favorite.$error.favExists">
+        No such menu number exists.
+      </div>
+      <div class="help-block" ng-if="signupCtrl.favoriteInvalid">
+        No such menu number exists.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" ng-disabled="signupForm.$pending">Submit</button>
+  </form>
+
+  <div class="alert alert-success" ng-if="signupCtrl.saved" style="margin-top:10px;">
+    Your information has been saved.
+  </div>
+</div>
